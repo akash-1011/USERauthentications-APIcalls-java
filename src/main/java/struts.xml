@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+    
+ <struts>
+ 
+ <constant name="struts.devMode" value="false" />
+ 
+ <package name="Dictionary-Weather" extends="struts-default">
+ 
+ <action name="" class="com.akash.struts.User" method="validateSession" >
+ 	<result name="success" type="redirect">
+ 		<param name="location">
+ 			/profile
+ 		</param>
+ 	</result>
+ 	<result name="failure" type="redirect">
+ 		<param name="location">
+ 			/admin
+ 		</param>
+ 	</result> 
+ 	<result name="login">login.jsp</result>
+ 	<result name="error">wait.jsp</result>
+ </action>
+ 
+ <action name="profile" class="com.akash.struts.Profile">
+ 	<result name="success">profile.jsp</result>
+ 	<result name="failure">error.jsp</result>
+ 	<result name="error">wait.jsp</result>
+ </action>
+ 
+ <action name="admin" class="com.akash.struts.Admin">
+ 	<result name="success">profile.jsp</result>
+ </action>
+ 
+ <action name="request" class="com.akash.struts.Request">
+ 	<result name="success">request.jsp</result>
+ 	<result name="failure">error.jsp</result>
+ </action>
+ 
+ <action name="approve" class="com.akash.struts.Approve">
+ 	<result name="success" type="redirect">
+ 		<param name = "location">
+             /request
+        </param >
+ 	</result>
+ </action>
+ 
+  <action name="history" class="com.akash.struts.History">
+ 	<result name="success">history.jsp</result>
+ 	<result name="failure">error.jsp</result>
+ </action>
+ 
+ <action name="users" class="com.akash.struts.UsersList">
+ 	<result name="success">users.jsp</result>
+ 	<result name="failure">error.jsp</result>
+ </action>
+ 
+ <action name="setUserTime" class="com.akash.struts.SetUserTime">
+ 	<result name="success" type="redirect">
+ 		<param name = "location">
+             /request
+        </param >
+ 	</result>
+ </action>
+ 
+ <action name="register" class="com.akash.struts.User" method="register">
+	<result name="success" type="redirect">
+ 		<param name="location">
+ 			/login.jsp
+ 		</param>
+ 	</result>
+	<result name="failure">error.jsp</result>
+ </action>
+ 
+ <action name="login" class="com.akash.struts.User" method="login">
+ 	<result name="success" type="redirect">
+ 		<param name="location">
+ 			/profile
+ 		</param>
+ 	</result>
+ 	<result name="login" type="redirect">
+ 		<param name="location">
+ 			/admin
+ 		</param>
+ 	</result> 
+ 	<result name="error">wait.jsp</result>
+ 	<result name="failure">error.jsp</result>
+ </action>
+ 
+  <action name="logout" class="com.akash.struts.User" method="logout">
+ 	<result name="success">login.jsp</result>
+ </action>
+ 
+  <action name="find-meaning" class="com.akash.struts.FindMeaning">
+	<result name="success">dictionary.jsp</result>
+	<result name="error">error.jsp</result>
+	<result name="failure">error.jsp</result>
+ </action> 
+ 
+ <action name="find-weather" class="com.akash.struts.FindWeather">
+ 	<result name="success">weather.jsp</result>
+ 	<result name="failure">error.jsp</result>
+ </action>
+ 
+ <action name="weather">
+ 	<result type="redirect">
+ 		<param name="location">
+ 			/weather.jsp
+ 		</param>
+ 	</result>
+ </action>
+ 
+ <action name="dictionary">
+ 	<result type="redirect">
+ 		<param name="location">
+ 			/dictionary.jsp
+ 		</param>
+ 	</result>
+ </action>
+ 
+ </package>
+ </struts>   

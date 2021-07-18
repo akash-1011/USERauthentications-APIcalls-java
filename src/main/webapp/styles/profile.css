@@ -1,0 +1,25 @@
+body{
+	overflow: hidden;
+
+}
+.app {
+	margin: 0;
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;  
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}

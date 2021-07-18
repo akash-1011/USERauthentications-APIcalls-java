@@ -1,0 +1,13 @@
+.app {
+display: flex;
+height: 50vh;
+justify-content: center;
+align-items: center;
+}
+
+.table {
+width: 70% !important;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+background-color: white;
+max-width: 70% !important;
+}
